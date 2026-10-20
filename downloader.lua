@@ -10,7 +10,7 @@ local delfile = delfile or function(file) writefile(file, '') end
 local function downloadFile(path, func)
 	if not isfile(path) then
 		local suc, res = pcall(function()
-			return game:HttpGet('https://raw.githubusercontent.com/wrealaero/aerov4/'..readfile('aerov4/profiles/commit.txt')..'/'..select(1, path:gsub('aerov4/', '')), true)
+			return game:HttpGet('https://raw.githubusercontent.com/nyxv4/nyxv2/'..readfile('aerov4/profiles/commit.txt')..'/'..select(1, path:gsub('aerov4/', '')), true)
 		end)
 		if not suc or res == '404: Not Found' then error(res) end
 		if path:find('%.lua') then
@@ -49,7 +49,7 @@ local function downloadPremadeProfiles(commit)
 		makefolder('aerov4/profiles/premade')
 	end
 	local success, response = pcall(function()
-		return game:HttpGet('https://api.github.com/repos/wrealaero/aerov4/contents/profiles/premade?ref=' .. commit)
+		return game:HttpGet('https://api.github.com/repos/wrealaero/aerov4/commits/main' .. commit)
 	end)
 	if success and response then
 		local ok, files = pcall(function() return httpService:JSONDecode(response) end)
