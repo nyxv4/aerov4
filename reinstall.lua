@@ -28,4 +28,4 @@ end)
 
 task.wait(0.67)
 
-loadstring(game:HttpGet('https://raw.githubusercontent.com/nyxv4/nyxv2/'..(commit or 'main')..'/main.lua', true))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/nyxv4/aerov4/'..(commit or 'main')..'/main.lua', true))()
