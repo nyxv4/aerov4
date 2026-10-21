@@ -49,7 +49,7 @@ local function downloadPremadeProfiles(commit)
 		makefolder('aerov4/profiles/premade')
 	end
 	local success, response = pcall(function()
-		return game:HttpGet('https://api.github.com/repos/wrealaero/aerov4/commits/main' .. commit)
+		return game:HttpGet('https://api.github.com/repos/nyxv4/aerov4/commits/main' .. commit)
 	end)
 	if success and response then
 		local ok, files = pcall(function() return httpService:JSONDecode(response) end)
@@ -72,7 +72,7 @@ if not shared.VapeDeveloper then
 	local latest = isfile('aerov4/profiles/latest.txt') and readfile('aerov4/profiles/latest.txt') or ''
 	if #commit ~= 40 then
 		local ok, res = pcall(function()
-			return game:HttpGet('https://api.github.com/repos/wrealaero/aerov4/commits/main', true)
+			return game:HttpGet('https://api.github.com/repos/nyxv4/aerov4/commits/main', true)
 		end)
 		if ok and res then
 			local h = res:match('"sha":"([a-f0-9]+)"')
@@ -86,7 +86,7 @@ if not shared.VapeDeveloper then
 	end
 	task.spawn(function()
 		local ok, res = pcall(function()
-			return game:HttpGet('https://api.github.com/repos/wrealaero/aerov4/commits/main', true)
+			return game:HttpGet('https://api.github.com/repos/nyxv4/aerov4/commits/main', true)
 		end)
 		if ok and res then
 			local h = res:match('"sha":"([a-f0-9]+)"')
